@@ -8,5 +8,8 @@ alias rake='noglob rake'
 alias bower='noglob bower'
 alias git='hub'
 
+# Give grep some color
+alias grep='grep --color=auto'
+
 # Launch chrome with remote debugging port on
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'
