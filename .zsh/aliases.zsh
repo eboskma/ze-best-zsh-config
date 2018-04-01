@@ -6,7 +6,6 @@ alias ll='ls -GFhl'
 
 alias rake='noglob rake'
 alias bower='noglob bower'
-alias git='hub'
 
 # Give grep some color
 alias grep='grep --color=auto'
