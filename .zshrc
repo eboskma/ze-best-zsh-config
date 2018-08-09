@@ -29,4 +29,7 @@ eval $(keychain --eval --agents ssh,gpg id_rsa)
 # Direnv
 eval "$(direnv hook zsh)"
 
+# rbenv
+test -e rbenv && eval "$(rbenv init -)"
+
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
