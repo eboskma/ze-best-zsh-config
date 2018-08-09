@@ -19,4 +19,4 @@ export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 export LC_COLLATE=C
 
 # GitHub token with no scope, used to get around API limits
-export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.gh_api_token)
+test -f ~/.gh_api_token && export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.gh_api_token)
