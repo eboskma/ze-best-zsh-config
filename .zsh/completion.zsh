@@ -66,4 +66,12 @@ zstyle ':filter-select' extended-search no # see below
 
 
 # Syntax Highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+OS=$(uname -s)
+case $OS in
+  Linux)
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    ;;
+  Darwin)
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    ;;
+esac
