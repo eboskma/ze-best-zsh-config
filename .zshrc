@@ -42,5 +42,5 @@ if [ -d $HOME/.asdf ]; then
   source $HOME/.asdf/completions/asdf.bash
 fi
 
-source <(minikube completion zsh)
-source <(kubectl completion zsh)
+if [ -x minikube ]; then source <(minikube completion zsh); fi
+if [ -x kubectl ]; then source <(kubectl completion zsh); fi
