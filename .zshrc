@@ -1,4 +1,5 @@
 fpath=($HOME/.zfunctions $fpath)
+if [ -d $HOME/.zfunctions/zsh-completions/src ]; then fpath=($HOME/.zfunctions/zsh-completions/src $fpath); fi
 
 source ~/.zsh/colors.zsh
 source ~/.zsh/setopt.zsh
@@ -33,3 +34,13 @@ eval "$(direnv hook zsh)"
 test -e rbenv && eval "$(rbenv init -)"
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+eval $(thefuck --alias)
+
+if [ -d $HOME/.asdf ]; then
+  source $HOME/.asdf/asdf.sh
+  source $HOME/.asdf/completions/asdf.bash
+fi
+
+source <(minikube completion zsh)
+source <(kubectl completion zsh)

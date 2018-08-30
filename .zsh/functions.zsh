@@ -37,22 +37,6 @@ function extract {
   fi
 }
 
-function ss {
-  if [ -e script/server ]; then
-    script/server $@
-  else
-    script/rails server $@
-  fi
-}
-
-function sc {
-  if [ -e script/console ]; then
-    script/console $@
-  else
-    script/rails console $@
-  fi
-}
-
 function trash () {
   local path
   for path in "$@"; do
@@ -84,3 +68,19 @@ function strip_diff_leading_symbols {
 ## Print a horizontal rule
 rule () {
   printf "%$(tput cols)s\n"|tr " " "─"}}
+
+sudo-command-line() {
+  [[ -z $BUFFER ]] && zle up-history
+  if [[ $BUFFER == sudo\ * ]]; then
+    LBUFFER="${LBUFFER#sudo }"
+  elif [[ $BUFFER == $EDITOR\ * ]]; then
+    LBUFFER="${LBUFFER#$EDITOR }"
+    LBUFFER="sudoedit $LBUFFER"
+  elif [[ $BUFFER == sudoedit\ * ]]; then
+    LBUFFER="${LBUFFER#sudoedit }"
+    LBUFFER="$EDITOR $LBUFFER"
+  else
+    LBUFFER="sudo $LBUFFER"
+  fi
+}
+zle -N sudo-command-line

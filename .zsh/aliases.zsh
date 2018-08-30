@@ -3,12 +3,12 @@ alias ls='ls -GFh'
 
 # Same as above, but in long listing format
 alias ll='ls -GFhl'
-
-alias rake='noglob rake'
-alias bower='noglob bower'
+alias lss='ls -lSh'
 
 # Give grep some color
 alias grep='grep --color=auto'
 
-# Launch chrome with remote debugging port on
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'
+alias arch='uname -m'
+alias imgcat='feh -x'
+alias abba='faketime "00:30:00" man'
+alias new_esp32='git clone https://github.com/espressif/esp-idf-template.git'
