@@ -6,6 +6,9 @@ PATH=~/.yarn/bin:$PATH
 PATH=~/flutter/bin:$PATH
 PATH=/usr/local/share/npm/bin:$PATH
 PATH=~/swift/usr/bin:$PATH
+PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+
+export PATH
 
 # Setup terminal, and turn on colors
 export TERM=xterm-256color
